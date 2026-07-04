@@ -105,7 +105,7 @@ function openSettings() {
   }
   settingsWin = new BrowserWindow({
     width: 600,
-    height: 680,
+    height: 730,
     resizable: false,
     autoHideMenuBar: true,
     title: 'Avion Messager',
@@ -118,6 +118,8 @@ function openSettings() {
 }
 
 ipcMain.handle('open-google-calendar', () => shell.openExternal('https://calendar.google.com'));
+
+ipcMain.handle('open-outlook-calendar', () => shell.openExternal('https://outlook.office.com/calendar'));
 
 ipcMain.handle('test-flight', () => fly(bannerText('Essai', 5)));
 

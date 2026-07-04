@@ -54,6 +54,19 @@
     margin-top: 14px;
     line-height: 1.5;
   }
+  .outlook {
+    font-size: 13px;
+    background: #f6f4fb;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 14px;
+    color: #3d3556;
+  }
+  .outlook summary { cursor: pointer; font-weight: 600; }
+  .outlook ol { margin: 10px 0 4px; }
+  .outlook li { font-size: 13px; margin-bottom: 7px; }
+  .outlook p { font-size: 12.5px; margin: 6px 0 2px; }
+  #ouvrir-outlook { background: #e9e4f7; color: #4b3a8c; padding: 6px 12px; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -71,6 +84,19 @@
   <button id="enregistrer">Enregistrer</button>
   <button id="essai">Vol d'essai</button>
   <div id="statut"></div>
+  <details class="outlook">
+    <summary>Ton agenda est sur Outlook (Microsoft 365) plutôt que Google ?</summary>
+    <ol>
+      <li><button id="ouvrir-outlook">Ouvrir Outlook Agenda</button> (sur le web)</li>
+      <li>Roue dentée, puis <b>Calendrier</b> > <b>Calendriers partagés</b></li>
+      <li>Section "Publier un calendrier" : choisis ton calendrier, niveau
+          <b>"Peut afficher tous les détails"</b>, puis <b>Publier</b></li>
+      <li>Copie le lien <b>ICS</b> (pas le lien HTML) et colle-le ci-dessus</li>
+    </ol>
+    <p>Si la section "Publier un calendrier" n'apparaît pas, l'informatique de
+       ton entreprise a désactivé cette option : il n'y a pas de contournement
+       simple dans ce cas.</p>
+  </details>
   <div class="note">
     Cette adresse est <b>secrète</b> : elle permet de lire ton agenda, ne la partage à personne.
     Elle reste enregistrée sur ton ordinateur uniquement, l'application ne l'envoie nulle part.
@@ -87,6 +113,10 @@
 
   document.getElementById('ouvrir-agenda').addEventListener('click', () => {
     window.avion.openCalendar();
+  });
+
+  document.getElementById('ouvrir-outlook').addEventListener('click', () => {
+    window.avion.openOutlook();
   });
 
   document.getElementById('essai').addEventListener('click', () => {

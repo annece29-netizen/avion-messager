@@ -5,5 +5,6 @@ const { contextBridge, ipcRenderer } = require('electron');
 contextBridge.exposeInMainWorld('avion', {
   saveUrl: (url) => ipcRenderer.invoke('save-ics-url', url),
   openCalendar: () => ipcRenderer.invoke('open-google-calendar'),
+  openOutlook: () => ipcRenderer.invoke('open-outlook-calendar'),
   testFlight: () => ipcRenderer.invoke('test-flight'),
 });

@@ -1,7 +1,7 @@
 {
   "name": "avion-messager",
   "productName": "Avion Messager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Un petit avion anime qui traverse l'ecran en tirant une banderole avec le rappel de la prochaine reunion",
   "main": "main.js",
   "scripts": {

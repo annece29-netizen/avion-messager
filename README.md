@@ -61,8 +61,33 @@ Elle reste enregistrée sur ton ordinateur uniquement. En cas de doute, Google
 Agenda propose un bouton "Réinitialiser" juste à côté de l'adresse, qui en
 génère une nouvelle et rend l'ancienne inutilisable.
 
-Astuce : ça fonctionne aussi avec n'importe quel agenda qui fournit une
-adresse iCal (Outlook, iCloud...).
+## Et si ton agenda est sur Outlook (Microsoft 365) ?
+
+Ça fonctionne aussi : Outlook sait publier son calendrier au même format.
+
+1. Ouvre Outlook sur le web : [outlook.office.com](https://outlook.office.com)
+   (compte professionnel) ou [outlook.live.com](https://outlook.live.com)
+   (compte personnel). Le nouveau Outlook de Windows fonctionne aussi.
+2. Roue dentée, puis **Calendrier** > **Calendriers partagés**
+3. Section "Publier un calendrier" : choisis ton calendrier et le niveau
+   **"Peut afficher tous les détails"**, puis clique sur **Publier**
+4. Deux liens apparaissent : copie le lien **ICS** (pas le lien HTML)
+   et colle-le dans l'application, comme pour Google
+
+À savoir :
+
+- En entreprise, l'administrateur informatique peut avoir désactivé la
+  publication de calendrier. Si la section "Publier un calendrier" n'apparaît
+  pas ou est grisée, il n'y a pas de contournement : c'est un choix de
+  sécurité de l'entreprise.
+- Ce lien ICS est secret, comme chez Google : on ne le colle que dans
+  l'application.
+- Même remarque que pour Google sur le délai : Microsoft rafraîchit le lien
+  publié par vagues, une réunion créée à la dernière minute peut échapper à
+  l'avion.
+
+Astuce : iCloud et tous les agendas qui fournissent une adresse iCal
+fonctionnent de la même façon.
 
 ## Limites connues
 
