@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Avion Messager</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+  }
+  #convoy {
+    position: absolute;
+    left: 0;
+    will-change: transform;
+  }
+  #bob {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: bob 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+  }
+  #banner {
+    background: #ffd3e8;
+    border: 3px solid #222;
+    border-radius: 12px;
+    padding: 10px 22px;
+    font: 700 28px 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: #191919;
+  }
+  #rope {
+    width: 46px;
+    height: 0;
+    border-top: 3px dashed #222;
+  }
+  #plane {
+    font-size: 54px;
+    line-height: 1;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+</style>
+</head>
+<body>
+<div id="convoy">
+  <div id="bob">
+    <div id="banner"></div>
+    <div id="rope"></div>
+    <div id="plane">&#9992;&#65039;</div>
+  </div>
+</div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const message = params.get('msg') || 'Réunion dans 5 min';
+  const duration = (parseFloat(params.get('duration')) || 12) * 1000;
+
+  const convoy = document.getElementById('convoy');
+  document.getElementById('banner').textContent = message;
+
+  // Altitude de vol : entre 10 % et 35 % de la hauteur de l'écran, au hasard.
+  convoy.style.top = Math.round(innerHeight * (0.10 + Math.random() * 0.25)) + 'px';
+
+  // Traversée de gauche à droite, l'avion en tête, la banderole derrière.
+  const width = convoy.getBoundingClientRect().width;
+  convoy.animate(
+    [
+      { transform: 'translateX(' + (-width - 80) + 'px)' },
+      { transform: 'translateX(' + (innerWidth + 80) + 'px)' },
+    ],
+    { duration: duration, easing: 'linear', fill: 'forwards' }
+  );
+</script>
+</body>
+</html>

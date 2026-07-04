@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Avion Messager : réglages</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, 'Helvetica Neue', sans-serif;
+    background: linear-gradient(180deg, #bfe3ff 0%, #eaf6ff 100%);
+    color: #1c2a3a;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 14px;
+    margin: 22px;
+    padding: 22px 26px;
+    box-shadow: 0 6px 24px rgba(30, 80, 140, 0.15);
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sous-titre { margin: 0 0 16px; color: #51677e; font-size: 14px; }
+  ol { padding-left: 22px; margin: 10px 0 16px; }
+  li { margin-bottom: 9px; font-size: 14.5px; line-height: 1.45; }
+  button {
+    font-size: 14.5px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 16px;
+    cursor: pointer;
+  }
+  #ouvrir-agenda { background: #e8f1fb; color: #1a5dab; }
+  #enregistrer { background: #1a73e8; color: #ffffff; }
+  #essai { background: #ffd3e8; color: #7a1f4d; }
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 13px;
+    padding: 10px 12px;
+    border: 2px solid #c3d4e6;
+    border-radius: 8px;
+    margin: 6px 0 12px;
+  }
+  input:focus { outline: none; border-color: #1a73e8; }
+  #statut { min-height: 40px; font-size: 14px; font-weight: 600; margin-top: 12px; }
+  .ok { color: #1e7d3c; }
+  .erreur { color: #b3261e; }
+  .note {
+    font-size: 12.5px;
+    color: #51677e;
+    background: #f2f7fc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>&#9992;&#65039; Avion Messager</h1>
+  <p class="sous-titre">Connecte ton agenda Google : 2 minutes, une seule fois.</p>
+  <ol>
+    <li><button id="ouvrir-agenda">Ouvrir Google Agenda</button> (sur ordinateur, pas sur téléphone)</li>
+    <li>Clique sur la roue dentée en haut à droite, puis <b>Paramètres</b></li>
+    <li>Dans la colonne de gauche, section "Paramètres de mes agendas" : clique sur <b>ton agenda</b> (celui avec ton nom)</li>
+    <li>Descends jusqu'à <b>"Adresse secrète au format iCal"</b> et copie l'adresse</li>
+    <li>Colle-la ci-dessous et clique sur Enregistrer :</li>
+  </ol>
+  <input id="adresse" type="text" placeholder="https://calendar.google.com/calendar/ical/...../basic.ics" spellcheck="false">
+  <button id="enregistrer">Enregistrer</button>
+  <button id="essai">Vol d'essai</button>
+  <div id="statut"></div>
+  <div class="note">
+    Cette adresse est <b>secrète</b> : elle permet de lire ton agenda, ne la partage à personne.
+    Elle reste enregistrée sur ton ordinateur uniquement, l'application ne l'envoie nulle part.
+    L'avion décollera 5 minutes avant chaque réunion, tant que l'application est ouverte
+    (petit avion dans la barre des tâches).
+  </div>
+</div>
+<script>
+  const adresse = document.getElementById('adresse');
+  const statut = document.getElementById('statut');
+
+  const params = new URLSearchParams(location.search);
+  adresse.value = params.get('current') || '';
+
+  document.getElementById('ouvrir-agenda').addEventListener('click', () => {
+    window.avion.openCalendar();
+  });
+
+  document.getElementById('essai').addEventListener('click', () => {
+    window.avion.testFlight();
+  });
+
+  document.getElementById('enregistrer').addEventListener('click', async () => {
+    statut.className = '';
+    statut.textContent = 'Vérification de la connexion à ton agenda...';
+    const resultat = await window.avion.saveUrl(adresse.value);
+    statut.className = resultat.ok ? 'ok' : 'erreur';
+    statut.textContent = resultat.message;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "name": "avion-messager",
+  "productName": "Avion Messager",
+  "version": "1.0.0",
+  "description": "Un petit avion anime qui traverse l'ecran en tirant une banderole avec le rappel de la prochaine reunion",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "demo": "electron . --demo",
+    "dist": "electron-builder --publish never"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Anne-Cecile Le Dain",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/annece29-netizen/avion-messager.git"
+  },
+  "dependencies": {
+    "node-ical": "^0.18.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "fr.annececile.avion-messager",
+    "productName": "Avion Messager",
+    "files": [
+      "main.js",
+      "calendar.js",
+      "preload.js",
+      "fly.html",
+      "settings.html",
+      "config.example.json",
+      "icon.png"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "artifactName": "Avion-Messager-Windows-${version}.${ext}"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["universal"]
+        }
+      ],
+      "category": "public.app-category.productivity",
+      "artifactName": "Avion-Messager-Mac-${version}.${ext}"
+    }
+  }
+}
