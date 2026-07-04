@@ -23,11 +23,17 @@ va sur la page **[Téléchargements](https://github.com/annece29-netizen/avion-m
 ### Sur Windows
 
 1. Télécharge le fichier `Avion-Messager-Windows-... .exe` (section "Assets")
-2. Double-clique dessus. Windows affiche un écran bleu "Windows a protégé
-   votre ordinateur" : c'est normal, l'application n'est pas signée
+2. Ton navigateur va probablement bloquer le fichier avec un message du type
+   "n'est pas fréquemment téléchargé" : c'est sa prudence normale face à une
+   application toute neuve. Pour le débloquer, ouvre le panneau des
+   téléchargements (Ctrl+J), passe la souris sur le fichier, clique sur les
+   trois points **"..."** puis **"Conserver"**. Si une fenêtre insiste,
+   clique sur **"Afficher plus"** puis **"Conserver quand même"**.
+3. Double-clique sur le fichier. Windows affiche un écran bleu "Windows a
+   protégé votre ordinateur" : même prudence, application non signée
    commercialement. Clique sur **"Informations complémentaires"** puis
    **"Exécuter quand même"**.
-3. C'est tout : l'application s'installe et s'ouvre toute seule.
+4. C'est tout : l'application s'installe et s'ouvre toute seule.
 
 ### Sur Mac
 
