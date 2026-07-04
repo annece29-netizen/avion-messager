@@ -27,8 +27,10 @@ va sur la page **[Téléchargements](https://github.com/annece29-netizen/avion-m
    "n'est pas fréquemment téléchargé" : c'est sa prudence normale face à une
    application toute neuve. Pour le débloquer, ouvre le panneau des
    téléchargements (Ctrl+J), passe la souris sur le fichier, clique sur les
-   trois points **"..."** puis **"Conserver"**. Si une fenêtre insiste,
-   clique sur **"Afficher plus"** puis **"Conserver quand même"**.
+   trois points **"..."** puis **"Conserver"**. Une fenêtre "Vérifiez que
+   vous faites confiance..." s'ouvre alors : ne clique pas sur Supprimer,
+   clique sur la **petite flèche du bouton "Supprimer"** (ou sur "Afficher
+   plus" selon les versions) puis sur **"Conserver quand même"**.
 3. Double-clique sur le fichier. Windows affiche un écran bleu "Windows a
    protégé votre ordinateur" : même prudence, application non signée
    commercialement. Clique sur **"Informations complémentaires"** puis
