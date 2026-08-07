@@ -63,6 +63,11 @@ trouvés. Ensuite, elle vit discrètement dans la barre des tâches (petit avion
 blanc sur fond bleu) : clic droit pour un vol d'essai, pour changer d'agenda,
 pour la lancer au démarrage de l'ordinateur, ou pour quitter.
 
+**Pense à cocher "Lancer au démarrage de l'ordinateur"** (clic droit sur
+l'icône) juste après avoir connecté ton agenda : sans ça, l'avion ne décolle
+que quand l'application est ouverte, et un redémarrage de l'ordinateur suffit
+à la fermer sans que tu t'en rendes compte.
+
 **Important : cette adresse est secrète.** Elle permet de lire ton agenda
 (et uniquement de le lire). Ne la partage à personne, ne la poste nulle part.
 Elle reste enregistrée sur ton ordinateur uniquement. En cas de doute, Google
