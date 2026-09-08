@@ -9,6 +9,8 @@ réunion, et beaucoup plus joli qu'une notification.
    │  Réunion Adrien dans 5 min  │ - - - -  ✈️
    └─────────────────────────────┘
 ```
+<img width="1457" height="532" alt="image" src="https://github.com/user-attachments/assets/b3367baa-bdaf-479f-9494-5e910126605a" />
+
 
 L'avion passe au-dessus de toutes tes fenêtres, et les clics passent au travers :
 il ne gêne jamais ce que tu es en train de faire. L'application ne collecte
